@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Callanan, Aidan
+//Webb, Cole
 //10/12/23
 //Handles movement and collision for the player
 
 public class PlayerController : MonoBehaviour
 {
-    public int totalCoins = 0;
-
     public float speed = 10f;
 
     public float jumpForce = 10f;
@@ -70,12 +69,6 @@ public class PlayerController : MonoBehaviour
     /// Collects any coins
     /// </summary>
     /// <param name="other">The object being collided with</param>
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Coin")
-        {
-            totalCoins++;
-            other.gameObject.SetActive(false);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{ }
 }
