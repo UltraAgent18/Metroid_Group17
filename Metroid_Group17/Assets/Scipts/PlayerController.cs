@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbodyRef;
 
+    private int health = 99;
+
+    private bool hit = false;
+
+    private bool canTakeDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
+
     }
 
     /// <summary>
@@ -61,12 +68,18 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player is not touching the ground so they can't jump");
         }
+    }
 
-
+    private void Blinking()
+    {
+        if (hit == true)
+        {
+            canTakeDamage = false;
+        }
     }
 
     /// <summary>
-    /// Collects any coins
+    /// 
     /// </summary>
     /// <param name="other">The object being collided with</param>
     //private void OnTriggerEnter(Collider other)
