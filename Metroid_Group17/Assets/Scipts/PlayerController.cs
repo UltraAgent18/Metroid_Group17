@@ -50,10 +50,6 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
 
-        //if (canTakeDamage == false)
-        //{
-
-        //}
     }
 
     /// <summary>
@@ -83,7 +79,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Collects any coins
+    /// 
     /// </summary>
     /// <param name="other">The object being collided with</param>
     //private void OnTriggerEnter(Collider other)
