@@ -186,10 +186,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6594027943604827588, guid: 5158c5d468bf50b41b9891074dfff347, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2137872891423276957, guid: 5158c5d468bf50b41b9891074dfff347, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 97355492}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8065846843819321322, guid: 5158c5d468bf50b41b9891074dfff347, type: 3}
       insertIndex: -1
@@ -212,6 +209,7 @@ GameObject:
   - component: {fileID: 97355492}
   - component: {fileID: 97355491}
   - component: {fileID: 97355490}
+  - component: {fileID: 97355493}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -287,12 +285,26 @@ Transform:
   m_GameObject: {fileID: 97355489}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.774, z: -10}
-  m_LocalScale: {x: 1, y: 0.50000006, z: 1}
+  m_LocalPosition: {x: -5, y: 3.5479999, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1354250705}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97355493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97355489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ab6350db4269d40b5eb4de1abe0087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1354250699}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &448766853
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,11 +772,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!4 &1354250705 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2137872891423276957, guid: 5158c5d468bf50b41b9891074dfff347, type: 3}
-  m_PrefabInstance: {fileID: 11887072}
-  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1354250706
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3672,6 +3679,7 @@ MeshFilter:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 97355492}
   - {fileID: 2050062218}
   - {fileID: 9060502391364887652}
   - {fileID: 11887072}
