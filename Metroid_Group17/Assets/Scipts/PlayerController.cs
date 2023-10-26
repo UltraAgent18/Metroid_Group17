@@ -17,13 +17,20 @@ public class PlayerController : MonoBehaviour
 
     private int health = 99;
 
-    private bool hit = false;
-
     private bool canTakeDamage;
+
+    public Material[] material;
+    public int call;
+    Renderer rend;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        call = 0;
+        rend = GetComponent<Renderer>();
+        rend.sharedMaterial = material[call];
+
         //gets the rigidbody component off of this object and stores a reference to it
         rigidbodyRef = GetComponent<Rigidbody>();
     }
@@ -50,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
 
+        rend.sharedMaterial = material[call];
     }
 
     /// <summary>
@@ -72,16 +80,35 @@ public class PlayerController : MonoBehaviour
 
     private void Blinking()
     {
-        if (hit == true)
+        canTakeDamage = false;
+        //wait
+         while (canTakeDamage == false)
         {
-            canTakeDamage = false;
+            if (call<1)
+            {
+                call++;
+            }
+            else
+            {
+                call = 0;
+            }
         }
+
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="other">The object being collided with</param>
-    //private void OnTriggerEnter(Collider other)
-    //{ }
+    private void OnTriggerEnter(Collider other)
+    { 
+        if (canTakeDamage == true)
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                health -= 15;
+                Blinking();
+            }
+        }
+    }
 }
