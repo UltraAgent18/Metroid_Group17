@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (movingRight)
+        if (movingRight == true)
         {
             //if the object is not farther than the start position + right travel dist, it can move right
             if (transform.position.x <= startingX + travelDistanceRight)
