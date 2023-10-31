@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1233270925473236202}
   - component: {fileID: 6273209471243401491}
   - component: {fileID: 997860832342350182}
+  - component: {fileID: -4435215261776278572}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -99,9 +100,24 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4435215261776278572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7911505358395642367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f702195a9e033e547ac12dcf6c7458eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelDistanceRight: 0
+  travelDistanceLeft: 0
+  speed: 0
