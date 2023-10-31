@@ -116,5 +116,12 @@ public class PlayerController : MonoBehaviour
                // Blinking();
             
         }
+        if (canTakeDamage == true && other.gameObject.tag == "Spike")
+        {
+
+            health -= 200;
+            // Blinking();
+
+        }
     }
 }
