@@ -15,9 +15,9 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbodyRef;
 
-    private int maxHealth = 99;
+    public int maxHealth = 99;
 
-    private int health = 99;
+    public int health = 99;
 
     public bool canTakeDamage;
 
