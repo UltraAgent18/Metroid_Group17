@@ -109,13 +109,12 @@ public class PlayerController : MonoBehaviour
     /// <param name="other">The object being collided with</param>
     private void OnTriggerEnter(Collider other)
     { 
-        if (canTakeDamage == true)
+        if (canTakeDamage == true && other.gameObject.tag == "Enemy")
         {
-            if (other.gameObject.tag == "Enemy")
-            {
+           
                 health -= 15;
                 Blinking();
-            }
+            
         }
     }
 }
