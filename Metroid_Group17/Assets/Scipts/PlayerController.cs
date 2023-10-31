@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rigidbodyRef;
 
+    private int maxHealth = 99;
+
     private int health = 99;
 
     private bool canTakeDamage;
@@ -58,6 +60,11 @@ public class PlayerController : MonoBehaviour
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
 
         rend.sharedMaterial = material[call];
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
     }
 
     /// <summary>
