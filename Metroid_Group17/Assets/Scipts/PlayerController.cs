@@ -111,14 +111,14 @@ public class PlayerController : MonoBehaviour
         {
            
                 health -= 15;
-               // Blinking();
+                StartCoroutine(Blinking());
             
         }
         if (canTakeDamage == true && other.gameObject.tag == "Spike")
         {
 
             health -= 200;
-            // Blinking();
+            Blinking();
 
         }
     }
