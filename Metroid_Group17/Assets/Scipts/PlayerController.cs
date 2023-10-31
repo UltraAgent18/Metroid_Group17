@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private int health = 99;
 
-    private bool canTakeDamage;
+    public bool canTakeDamage;
 
     public Material[] material;
     public int call;
