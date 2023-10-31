@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         {
            
                 health -= 15;
-                Blinking();
+               // Blinking();
             
         }
     }
