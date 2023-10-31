@@ -21,17 +21,13 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
-    public Material[] material;
-    public int call;
-    Renderer rend;
+    
 
     // Start is called before the first frame update
     void Start()
     {
 
-        call = 0;
-        rend = GetComponent<Renderer>();
-        rend.sharedMaterial = material[call];
+        
 
         //gets the rigidbody component off of this object and stores a reference to it
         rigidbodyRef = GetComponent<Rigidbody>();
@@ -59,7 +55,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
 
-        rend.sharedMaterial = material[call];
+        
 
         if (health > maxHealth)
         {
@@ -87,19 +83,7 @@ public class PlayerController : MonoBehaviour
 
     private void Blinking()
     {
-        canTakeDamage = false;
-        //wait
-         while (canTakeDamage == false)
-        {
-            if (call<1)
-            {
-                call++;
-            }
-            else
-            {
-                call = 0;
-            }
-        }
+        
 
     }
 
