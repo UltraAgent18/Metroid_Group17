@@ -81,9 +81,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Blinking()
+    private IEnumerator Blinking()
     {
         
+        for (int index = 0; index < 30; index++)
+        {
+            if (index % 2 == 0)
+            {
+                GetComponent<MeshRenderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().enabled = true;
+            }
+            yield return new WaitForSeconds(.1f);
+        }
+
+        GetComponent<MeshRenderer>().enabled = true;
 
     }
 
