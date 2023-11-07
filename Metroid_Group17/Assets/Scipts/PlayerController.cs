@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //Callanan, Aidan
 //Webb, Cole
 //10/12/23
@@ -21,10 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
-    public GameObject Bullet;
 
-    public bool facingLeft = true;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -39,26 +38,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //== checks = asignment
         //Side to side movement
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
-            if (facingLeft == false)
-            {
-                transform.Rotate(new Vector3(0, 180, 0));
-                facingLeft = true;
-            }
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
-            if (facingLeft == true)
-            {
-                transform.Rotate(new Vector3(0, 180, 0));
-                facingLeft = false;
-            }
         }
 
         //Jumping
@@ -74,12 +62,6 @@ public class PlayerController : MonoBehaviour
         if (health > maxHealth)
         {
             health = maxHealth;
-        }
-
-        //Shooting
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            //Shoot();
         }
     }
 
@@ -120,11 +102,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
 
     }
-    private void ShootLaser()
-        {
-            GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
-            laserInstance.GetComponent<Laser>();
-        }
 
     /// <summary>
     /// 
