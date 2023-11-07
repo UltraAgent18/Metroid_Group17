@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -7,9 +8,12 @@ public class Enemy : MonoBehaviour
     public float travelDistanceRight = 0;
     public float travelDistanceLeft = 0;
     public float speed;
+    public int EnemyHealth = 1;
 
     private float startingX;
     private bool movingRight = true;
+
+    public GameObject EnemyP;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +49,11 @@ public class Enemy : MonoBehaviour
             {
                 movingRight = true;
             }
+        }
+
+        if (EnemyHealth <= 0)
+        {
+            EnemyP.SetActive(false);
         }
     }
 }
