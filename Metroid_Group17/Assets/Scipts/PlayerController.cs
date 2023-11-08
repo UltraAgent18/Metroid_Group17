@@ -63,6 +63,14 @@ public class PlayerController : MonoBehaviour
         {
             health = maxHealth;
         }
+
+
+        //Shooting
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            //Shoot();
+        }
+
     }
 
     /// <summary>
@@ -102,6 +110,13 @@ public class PlayerController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
 
     }
+
+    private void ShootLaser()
+        {
+            GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
+            laserInstance.GetComponent<Laser>();
+        }
+
 
     /// <summary>
     /// 
