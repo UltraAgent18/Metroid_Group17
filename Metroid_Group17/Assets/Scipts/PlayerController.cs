@@ -22,9 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
-    public bool facingLeft;
 
-    public GameObject Bullet;
     
 
     // Start is called before the first frame update
