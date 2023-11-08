@@ -6,7 +6,7 @@ using UnityEngine;
 //Callanan, Aidan
 //Webb, Cole
 //10/12/23
-//Handles movement and collision for the player
+//Handles movement and collision for the players
 
 public class PlayerController : MonoBehaviour
 {
