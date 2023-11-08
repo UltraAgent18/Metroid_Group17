@@ -22,9 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
-    public bool facingLeft;
 
-    public GameObject Bullet;
     
 
     // Start is called before the first frame update
@@ -65,14 +63,6 @@ public class PlayerController : MonoBehaviour
         {
             health = maxHealth;
         }
-
-
-        //Shooting
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            ShootLaser();
-        }
-
     }
 
     /// <summary>
@@ -82,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position + -Vector3.down, Vector3.down, out hit, 1.3f))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.3f))
         {
             Debug.Log("Player is touching the ground so jump");
             rigidbodyRef.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -112,13 +102,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<MeshRenderer>().enabled = true;
 
     }
-
-    private void ShootLaser()
-        {
-            GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
-            laserInstance.GetComponent<Laser>().facingLeft = facingLeft;
-        }
-
 
     /// <summary>
     /// 
