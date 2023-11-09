@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
+    public GameObject Bullet;
+
 
     
 
