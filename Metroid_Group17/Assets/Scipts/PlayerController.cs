@@ -22,7 +22,14 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
+<<<<<<< Updated upstream
+=======
+    public GameObject Bullet;
 
+    public GameObject HeavyPickup;
+>>>>>>> Stashed changes
+
+    public GameObject HeavyBullet;
     
 
     // Start is called before the first frame update
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
         //Shooting
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            //Shoot();
+            ShootLaser();
         }
 
     }
@@ -131,11 +138,17 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Blinking());
             
         }
+
         if (canTakeDamage == true && other.gameObject.tag == "Spike")
         {
 
             health -= 200;
             Blinking();
+
+        }
+
+       //if (other.gameObject.tag == "Heavy")
+        {
 
         }
     }
