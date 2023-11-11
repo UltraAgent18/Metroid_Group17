@@ -22,12 +22,9 @@ public class PlayerController : MonoBehaviour
 
     public bool canTakeDamage;
 
-<<<<<<< Updated upstream
-=======
     public GameObject Bullet;
 
     public GameObject HeavyPickup;
->>>>>>> Stashed changes
 
     public GameObject HeavyBullet;
     
