@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public GameObject Bullet;
 
     public GameObject HeavyBullet;
+
+    public bool getHeavy = false;
     
 
     // Start is called before the first frame update
@@ -70,7 +72,15 @@ public class PlayerController : MonoBehaviour
         //Shooting
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            ShootLaser();
+            if (getHeavy == false)
+            {
+                ShootLaser();
+            }
+            else if (getHeavy == true)
+            {
+                ShootHeavy();
+            }
+            
         }
 
     }
@@ -119,6 +129,12 @@ public class PlayerController : MonoBehaviour
             laserInstance.GetComponent<Laser>();
         }
 
+    private void ShootHeavy()
+    {
+        GameObject laserInstance = Instantiate(HeavyBullet, transform.position, transform.rotation);
+        laserInstance.GetComponent<Laser>();
+    }
+
 
     /// <summary>
     /// 
@@ -139,11 +155,6 @@ public class PlayerController : MonoBehaviour
 
             health -= 200;
             Blinking();
-
-        }
-
-       //if (other.gameObject.tag == "Heavy")
-        {
 
         }
     }
