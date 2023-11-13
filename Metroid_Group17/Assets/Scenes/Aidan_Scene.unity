@@ -791,6 +791,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -771859265601477045, guid: 5f3bd7f0c513419429619304b3c34341, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 639112279418871997, guid: 5f3bd7f0c513419429619304b3c34341, type: 3}
       propertyPath: m_Name
       value: Player 1
@@ -851,7 +855,8 @@ PrefabInstance:
       propertyPath: canTakeDamage
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -771859265601477045, guid: 5f3bd7f0c513419429619304b3c34341, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -905,6 +910,8 @@ MonoBehaviour:
   travelDistanceRight: 2
   travelDistanceLeft: -2
   speed: 2
+  EnemyHealth: 1
+  EnemyP: {fileID: 0}
 --- !u!4 &1833806695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1096368148298390359, guid: 378c5a6c31065ae4c91ffa3568b0764c, type: 3}

@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     public GameObject HeavyBullet;
 
     public bool getHeavy = false;
-    
+
+    public bool shootRight = false;
 
     // Start is called before the first frame update
     void Start()
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour
     private void ShootLaser()
         {
             GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
-            laserInstance.GetComponent<Laser>();
+            laserInstance.GetComponent<Laser>().goingRight = shootRight;
         }
 
     private void ShootHeavy()
