@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject Bullet;
 
-    public GameObject HeavyPickup;
-
     public GameObject HeavyBullet;
     
 
