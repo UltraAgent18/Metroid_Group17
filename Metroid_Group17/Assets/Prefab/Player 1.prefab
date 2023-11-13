@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7864479537690458026}
   - component: {fileID: 3298663028993824566}
   - component: {fileID: -771859265601477045}
+  - component: {fileID: 7732171431392147890}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -127,8 +128,8 @@ MonoBehaviour:
   health: 99
   canTakeDamage: 0
   Bullet: {fileID: 7746869431163065506, guid: 190131955a99e0b4bbcc8ece5a351df8, type: 3}
-  HeavyPickup: {fileID: 0}
   HeavyBullet: {fileID: 5396483353062359998, guid: b8e30640124b76947a7861cc4a1e1541, type: 3}
+  getHeavy: 0
 --- !u!54 &3298663028993824566
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,3 +171,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   goingRight: 0
+--- !u!65 &7732171431392147890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639112279418871997}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.99999994}
+  m_Center: {x: 0, y: 0, z: 0}
