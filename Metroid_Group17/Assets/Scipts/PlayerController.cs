@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 //Callanan, Aidan
@@ -32,10 +33,13 @@ public class PlayerController : MonoBehaviour
     
     float canFire = -1f;
 
+    [SerializeField] private TextMeshProUGUI healthText;
+
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
         
 
         //gets the rigidbody component off of this object and stores a reference to it
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        healthText.text = "Health: " + health;
+
         //Side to side movement
         if (Input.GetKey(KeyCode.A))
         {
