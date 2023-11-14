@@ -72,7 +72,10 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawLine(transform.position, transform.position + Vector3.down * 1.3f, Color.red);
 
-        
+        if (health <= 0)
+        {
+            SceneManager.loadScene(0);
+        }
 
         if (health > maxHealth)
         {
