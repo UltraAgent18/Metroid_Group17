@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI healthText;
 
+    public bool isInvincible;
 
     // Start is called before the first frame update
     void Start()
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
         
         for (int index = 0; index < 30; index++)
         {
+            isInvincible = true;
             if (index % 2 == 0)
             {
                 GetComponent<MeshRenderer>().enabled = false;
@@ -139,6 +141,7 @@ public class PlayerController : MonoBehaviour
                 GetComponent<MeshRenderer>().enabled = true;
             }
             yield return new WaitForSeconds(.1f);
+            isInvincible = false;
         }
 
         GetComponent<MeshRenderer>().enabled = true;
@@ -170,8 +173,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <param name="other">The object being collided with</param>
     private void OnTriggerEnter(Collider other)
-    { 
-        if (canTakeDamage == true && other.gameObject.tag == "Enemy")
+    {
+        if (canTakeDamage == true && other.gameObject.tag == "Enemy" && isInvincible == false)
         {
            
                 health -= 15;
