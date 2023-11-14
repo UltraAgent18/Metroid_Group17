@@ -9,7 +9,6 @@ TagManager:
   - Heavy
   - Bullet
   - HardEnemy
-  - Portal
   - Door
   layers:
   - Default
