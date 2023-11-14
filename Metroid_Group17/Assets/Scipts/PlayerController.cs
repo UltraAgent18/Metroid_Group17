@@ -197,5 +197,12 @@ public class PlayerController : MonoBehaviour
             Blinking();
 
         }
+
+        if (other.gameObject.tag == "Heavy")
+        {
+
+            getHeavy = true;
+
+        }
     }
 }
