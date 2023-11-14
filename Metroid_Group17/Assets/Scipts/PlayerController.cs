@@ -182,6 +182,14 @@ public class PlayerController : MonoBehaviour
             
         }
 
+        if (canTakeDamage == true && other.gameObject.tag == "HardEnemy" && isInvincible == false)
+        {
+
+            health -= 35;
+            StartCoroutine(Blinking());
+
+        }
+
         if (canTakeDamage == true && other.gameObject.tag == "Spike")
         {
 

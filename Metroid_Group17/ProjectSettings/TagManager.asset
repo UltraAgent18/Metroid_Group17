@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Heavy
   - Bullet
+  - HardEnemy
   layers:
   - Default
   - TransparentFX

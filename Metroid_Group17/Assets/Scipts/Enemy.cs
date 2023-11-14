@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            EnemyHealth -= 2;
+            EnemyHealth -= 1;
         }
     }
 }
