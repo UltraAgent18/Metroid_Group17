@@ -54,15 +54,16 @@ public class Enemy : MonoBehaviour
        
 
         if (EnemyHealth <= 0)
-            {
+        {
                 EnemyP.SetActive(false);
-            }
         }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")
         {
             EnemyHealth -= 1;
+            
         }
     }
 }

@@ -197,5 +197,11 @@ public class PlayerController : MonoBehaviour
             Blinking();
 
         }
+
+        if (other.gameObject.tag == "Door")
+        {
+            transform.position = other.gameObject.GetComponent<Door>().teleportPoint.transform.position;
+            
+        }
     }
 }

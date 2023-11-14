@@ -121,3 +121,5 @@ MonoBehaviour:
   travelDistanceRight: 0
   travelDistanceLeft: 0
   speed: 0
+  EnemyHealth: 1
+  EnemyP: {fileID: 0}
