@@ -198,10 +198,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "Door")
+        if (other.gameObject.tag == "Heavy")
         {
-            transform.position = other.gameObject.GetComponent<Door>().teleportPoint.transform.position;
-            
+
+            getHeavy = true;
+
         }
     }
 }
