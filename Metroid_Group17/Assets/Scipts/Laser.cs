@@ -6,6 +6,7 @@ public class Laser : MonoBehaviour
 {
     public float speed;
     public bool goingRight;
+    
 
     // Update is called once per frame
     void Update()
@@ -20,5 +21,7 @@ public class Laser : MonoBehaviour
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
     }
+
+    
 
 }

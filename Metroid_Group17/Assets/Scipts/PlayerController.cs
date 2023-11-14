@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
 
     public bool getHeavy = false;
 
+    private float fireRate = 0.5f;
+    
+    float canFire = -1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour
 
 
         //Shooting
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) && Time.time > canFire)
         {
             if (getHeavy == false)
             {
@@ -82,7 +86,7 @@ public class PlayerController : MonoBehaviour
             
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && Time.time > canFire)
         {
             if (getHeavy == false)
             {
@@ -135,12 +139,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ShootLaserRight()
-        {
-            GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
-            laserInstance.GetComponent<Laser>().goingRight = true;
-        }
+    {
+        canFire = Time.time + fireRate;
+        GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
+        laserInstance.GetComponent<Laser>().goingRight = true;
+    }
     private void ShootLaserLeft()
     {
+        canFire = Time.time + fireRate;
         GameObject laserInstance = Instantiate(Bullet, transform.position, transform.rotation);
         laserInstance.GetComponent<Laser>().goingRight = false;
     }
